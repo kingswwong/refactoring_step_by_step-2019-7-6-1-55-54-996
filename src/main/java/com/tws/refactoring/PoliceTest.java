@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertSame;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 /**
  * Created by KingsWong on 2019/7/15.
@@ -31,5 +32,12 @@ public class PoliceTest {
         Police police = new Police();
 
         assertSame(police.checkDriver(driver),true);
+    }
+
+    @Test
+    public void should_catch_null_pointer_exception_when_driver_is_null(){
+        Police police = new Police();
+
+        assertThrows(NullPointerException.class,()->{police.checkDriver(null);});
     }
 }
