@@ -24,4 +24,12 @@ public class PoliceTest {
 
         assertSame(police.checkDriver(driver),true);
     }
+
+    @Test
+    public void should_return_true_in_check_driver_when_driver_age_equal_18(){
+        Driver driver = new Driver(18);
+        Police police = new Police();
+
+        assertSame(police.checkDriver(driver),true);
+    }
 }
